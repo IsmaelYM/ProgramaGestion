@@ -55,17 +55,12 @@ public class ListadoProveedores implements WindowListener, ActionListener{
 		if(e.getSource().equals(btnPdf)) {
 			try
 			{
-			//Initialize PDF writer
+			
 			PdfWriter writer = new PdfWriter("imprimir.pdf");
-			//Initialize PDF document
 			PdfDocument pdf = new PdfDocument(writer);
-			// Initialize document
 			Document document = new Document(pdf);
-			//Add paragraph to the document
 			document.add(new Paragraph("Proveedor\n"+"Nombre  -  "+"Tlf  -  "+"Producto \n"+ txaListadoProveedor.getText()));
-			//Close document
 			document.close();
-			// Open the new PDF document just created
 			Desktop.getDesktop().open(new File("imprimir.pdf"));
 			}
 			catch(IOException | java.io.IOException ioe) {}
